@@ -6,6 +6,7 @@ changelogs and deprecation notices, finding the affected code, and proposing
 a verified fix before anyone has to notice the hard way.
 
 **Recent real-world contributions:**
+- [ianarawjo/ChainForge#416](https://github.com/ianarawjo/ChainForge/pull/416) — migrated OpenAI SDK usage (chat, image generation, Together.ai integration) from v3 to v4 across three call sites
 - [ToolJet/ToolJet#17829](https://github.com/ToolJet/ToolJet/pull/17829) — migrated the Gemini plugin off the deprecated `@google/generative-ai` SDK to `@google/genai`
 - [langchain-ai/langchainjs#10533](https://github.com/langchain-ai/langchainjs/issues/10533) — verified old→new SDK type mapping shared as a reference for a known deprecated-dependency issue
 
