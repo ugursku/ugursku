@@ -1,9 +1,9 @@
-### Building tooling that keeps codebases in sync with the APIs and SDKs they depend on.
+**Building tooling that keeps codebases in sync with the APIs and SDKs they depend on.**
 
-Most teams find out a dependency broke *after* it's already in production. I'm
-working on an agent-based system that catches this earlier — reading
-changelogs and deprecation notices, finding the affected code, and proposing
-a verified fix before anyone has to notice the hard way.
+Most teams find out a dependency broke *after* it's already in production. I built an agent-based system that catches this earlier — it reads changelogs and deprecation notices, finds the affected code, verifies the fix against your own tests, and only then opens a PR.
+
+### 🔧 [self-maintaining-action](https://github.com/ugursku/self-maintaining-action)
+A GitHub Action you can drop into any repo. It never trusts the agent's own report — it re-runs your tests and reverts everything if the agent touched a test file, `node_modules`, or a lockfile. [See it catch and fix a real breaking change, end-to-end, with no human in the loop →](https://github.com/ugursku/self-maintaining-action/pull/1)
 
 **Recent real-world contributions:**
 - [ianarawjo/ChainForge#416](https://github.com/ianarawjo/ChainForge/pull/416) — migrated OpenAI SDK usage (chat, image generation, Together.ai integration) from v3 to v4 across three call sites
