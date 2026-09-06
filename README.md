@@ -19,9 +19,9 @@ moved, re-runs your tests itself, and only then opens a pull request.
 
 One run, end to end, with no human in the loop:
 
-| | files | lines | tests | turns | cost |
+| | files | lines | tests | turns | cost at list rates |
 | --- | --- | --- | --- | --- | --- |
-| [patchery-dev/Patchery#2](https://github.com/patchery-dev/Patchery/pull/2) | 1 | +1 −1 | failed → passed | 11 | $0.1213 |
+| [patchery-dev/Patchery#2](https://github.com/patchery-dev/Patchery/pull/2) | 1 | +1 −1 | failed → passed | 10 | $0.1958 |
 
 <br>
 
