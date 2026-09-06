@@ -15,13 +15,19 @@ trust it.
 Writing the fix is the easy part. Tell an AI to make your tests pass and it can pass
 them by deleting them — so Patchery never reads the agent's own account of what it
 did. It looks at the files, throws the whole attempt away if anything off-limits
-moved, re-runs your tests itself, and only then opens a pull request.
+moved, re-runs your tests itself, and hands the diff to a second agent that has no
+write access and never sees the first one's reasoning. Only then does it open a
+pull request.
 
 One run, end to end, with no human in the loop:
 
 | | files | lines | tests | turns | cost at list rates |
 | --- | --- | --- | --- | --- | --- |
-| [patchery-dev/Patchery#2](https://github.com/patchery-dev/Patchery/pull/2) | 1 | +1 −1 | failed → passed | 10 | $0.1958 |
+| [patchery-dev/Patchery#2](https://github.com/patchery-dev/Patchery/pull/2) | 1 | +1 −1 | failed → passed | 9 | $0.2251 |
+
+The second agent's verdict on that diff: not refuted, confidence 72, $0.3298. Proving
+the fix cost more than making it, which is the part I find most interesting about
+this problem.
 
 <br>
 
@@ -41,9 +47,23 @@ changes.
 
 <br>
 
+**Where it came back empty**
+
+Pointed at four repositories I don't own, it has opened nothing — and that record is
+more useful than the one above. One spent 25 turns working out that the failing tests
+were about my machine rather than the library, and refused to invent a change. One was
+a stateful-to-stateless API redesign bigger than a single run; twice my own stall rule
+cut it off just as it was about to start writing, which is how I found out the rule was
+wrong. One was a real, reported break that had already healed on the newer Node I ran
+on. One had no tests at all, so there was nothing to prove a fix against.
+
+Not one of them is a wrong fix. The whole point is the refusing.
+
+<br>
+
 **Where this actually is:** Patchery is a GitHub Action you install yourself. There
-is no hosted service, no revenue and no users. What exists is the code, one run that
-worked, and the pull requests above. [patchery.dev](https://patchery.dev) checks its
+is no hosted service, no revenue and no users. What exists is the code, the runs that
+worked, the runs that did not, and the pull requests above. [patchery.dev](https://patchery.dev) checks its
 own claims against the GitHub API in your browser while you read it — including the
 sentence about nothing being merged.
 
