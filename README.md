@@ -2,7 +2,7 @@ I build tooling that keeps codebases working when the libraries under them chang
 
 Your project runs on other people's code. When they change how it works, your app stops working — usually discovered in production, by someone reading a stack trace on a Tuesday afternoon. I work on the part that comes after the version bump: finding what broke, rewriting it, and proving the fix before anyone is asked to trust it.
 
-## Patchery · [patchery.dev](https://patchery.dev)
+## [Patchery](https://github.com/patchery-dev/Patchery) · [patchery.dev](https://patchery.dev)
 
 **Dependabot tells you a dependency changed. Patchery works out what that means for your code — and will not claim a fix it cannot prove.**
 
