@@ -1,3 +1,25 @@
+<!--
+  The GitHub profile README, as it should read.
+
+  THIS FILE IS NOT THE LIVE COPY. It lives in the notes repository; the live one
+  is pasted into the profile by hand. Until 2026-09-08 this file held an OLDER,
+  DIFFERENT draft than what was actually published, which is how an audit that
+  "checked the profile README" checked the wrong artefact and reported it clean.
+  If you edit the live one, paste it back here in the same pass.
+
+  check-claims.mjs CANNOT see this file - it compares the tagline across seven
+  files inside the code repository. Three surfaces are outside its reach and all
+  three are hand-maintained:
+
+      this profile README
+      the pixels inside og.png
+      the repository's About field on GitHub
+
+  On 2026-09-08 all of them were still carrying the pitch that was replaced two
+  days earlier. That is not a coincidence; it is what "the gate cannot see it"
+  means in practice.
+-->
+
 I build tooling that keeps codebases working when the libraries under them change.
 
 Your project runs on other people's code. When they change how it works, your app stops working — usually discovered in production, by someone reading a stack trace on a Tuesday afternoon. I work on the part that comes after the version bump: finding what broke, rewriting it, and proving the fix before anyone is asked to trust it.
